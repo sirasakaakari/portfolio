@@ -191,7 +191,7 @@ header {
 .name-overlay{
   position:absolute;
   top: 46%;
-  left: calc(28.8% + 23px);
+  left: calc(28.8% + 95px);
   transform: translate(-50%, -50%);
   display: flex;
   flex-direction: column;
@@ -334,16 +334,19 @@ header {
   background: var(--white);
   border: 1.5px solid var(--border);
   border-radius: 14px;
-  padding: 0.8rem 1rem 0.7rem;
+  /* padding: 0.8rem 1rem 0.7rem; */
+  padding: 1.5rem 4rem 1.7rem;
   box-shadow: 0 8px 32px rgba(192,32,42,0.18), 0 2px 8px rgba(0,0,0,0.1);
 }
 .kb-label-sm {
   font-family: var(--mono);
-  font-size: 0.5rem;
+  /* font-size: 0.5rem; */
+  font-size: 0.9rem;
   color: rgba(192,32,42,0.4);
   letter-spacing: 0.15em;
   text-align: center;
-  margin-bottom: 0.55rem;
+  /* margin-bottom: 0.55rem; */
+  margin-bottom: 1rem;
 }
 .kb-row { display: flex; gap: 6px; margin-bottom: 6px; justify-content: center; }
 .kb-row:last-child { margin-bottom: 0; }
@@ -367,9 +370,24 @@ header {
   transform: translateY(2px);
   box-shadow: 0 1px 0 var(--pink-light), 0 2px 3px rgba(192,32,42,0.08);
 }
-.key.wide { width: 90px; height: 44px; }
-.key.std  { width: 58px; height: 44px; }
-.key.sq   { width: 44px; height: 44px; font-size: 1rem; }
+.key.wide { 
+  /* width: 90px; height: 44px;  */
+  width: 95px;
+  height: 52px;
+}
+.key.std  { 
+  /* width: 58px; 
+  height: 44px;  */
+  width: 80px;
+  height: 50px;
+}
+.key.sq   { 
+  /* width: 44px; 
+  height: 44px;  */
+  width: 52px;
+  height: 50px;
+  font-size: 1rem; 
+}
 .key.run-key {
   background: var(--red);
   color: #fff;
@@ -380,8 +398,19 @@ header {
 .key.run-key:active, .key.run-key.pressed {
   box-shadow: 0 1px 0 var(--red-dark), 0 2px 4px rgba(192,32,42,0.15);
 }
-.key-main { font-size: 0.72rem; font-weight: 700; line-height: 1; }
-.key-sub  { font-size: 0.42rem; opacity: 0.6; letter-spacing: 0.08em; margin-top: 2px; }
+.key-main { 
+  /* font-size: 0.72rem;  */
+  font-size: 0.92rem;
+  font-weight: 700; 
+  line-height: 1; 
+}
+.key-sub  { 
+  /* font-size: 0.42rem;  */
+  font-size: 0.72rem;
+  opacity: 0.6; 
+  letter-spacing: 0.08em; 
+  margin-top: 2px; 
+}
 .kb-close {
   position: absolute;
   top: -8px; right: -8px;
@@ -523,20 +552,20 @@ header {
 .term-out-body {
   padding: 0.9rem 1rem;
   font-family: var(--mono);
-  font-size: 0.64rem;
+  font-size: 0.93rem;
   line-height: 1.95;
   color: #7A3A3A;
   min-height: 160px;
 }
 .tp  { 
   color: #FF4455; 
-  font-size: 17px;
+  font-size: 15px;
 }
 .tc  { 
   color: #c06363; 
   font-size: 13px;
 }
-.tv  { color: #F0DCE1; }
+.tv  { color: #dac5ca; }
 .ta  { color: #F87171; }
 .tg  { color: #4ade80; }
 .ty  { color: #fbbf24; }
@@ -587,6 +616,29 @@ header {
   line-height: 1.95; color: #7A3A3A;
   min-height: 75px;
 }
+/* @media (max-width: 1050px) {
+    .term-win {
+    height: 650px;
+  }
+  .proribbon-h {
+    position: absolute;
+    top: 16%;
+    left: 0px;
+    right: 0;
+    height: 31px;
+  }
+  .circle-bg {
+    position: absolute;
+    left: 36px;
+    top: 19%;
+  }
+  .profile-name-tag {
+    position: absolute;
+    left: 193px;
+    top: 19%;
+  }
+
+} */
 @media (max-width: 650px) {
   .term-win {
     height: 910px;
@@ -698,7 +750,7 @@ header {
 .sk-name {
   font-size: 0.95rem;
   font-weight: 600;
-  color: var(--white);
+  color: #f0d3da;
 }
 .sk-lv {
   font-family: 'Share Tech Mono', monospace;

@@ -23,7 +23,7 @@
     </div>
     <div class="sec-body">
       <div class="work-gift-grid">
-        <article class="wg">
+        <!-- <article class="wg">
           <div class="wg-closed" style="background:#120508">
             <div class="wg-closed-sh"></div>
             <div class="wg-closed-sv"></div>
@@ -49,34 +49,35 @@
               <span class="wgt">Web</span>
             </div>
           </div>
-        </article>
+        </article> -->
         <article class="wg">
-          <div class="wg-closed" style="background:#060E06">
-            <div class="wg-closed-sh"></div>
-            <div class="wg-closed-sv"></div>
-            <svg width="30" height="14" viewBox="0 0 30 14" fill="none" style="position:relative;z-index:1">
-              <ellipse cx="7.5" cy="7" rx="7.5" ry="5" fill="rgba(34,197,94,0.2)" stroke="rgba(34,197,94,0.45)" stroke-width="1"/>
-              <ellipse cx="22.5" cy="7" rx="7.5" ry="5" fill="rgba(34,197,94,0.2)" stroke="rgba(34,197,94,0.45)" stroke-width="1"/>
-              <circle cx="15" cy="7" r="3.5" fill="rgba(34,197,94,0.55)" stroke-width="0.8"/>
-            </svg>
-            <div class="wg-type">Web App</div>
-          </div>
-          <div class="wg-open" style="background:#060E06">
-            <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
-              <rect x="6" y="6" width="26" height="26" rx="3" stroke="#22c55e" stroke-width="1" opacity="0.5"/>
-              <path d="M13 19l5 5 8-10" stroke="#22c55e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.75"/>
-            </svg>
-          </div>
-          <div class="wg-body">
-            <div class="wg-title">Webアプリ①</div>
-            <div class="wg-desc">作成したWebアプリの説明をここに記載してください。</div>
-            <div class="wg-tags">
-              <span class="wgt">React</span>
-              <span class="wgt">Node.js</span>
+          <a href="https://studylink-fklm.onrender.com/" target="_blank" rel="noopener noreferrer">
+            <div class="wg-closed" style="background:#060E06">
+              <div class="wg-closed-sh"></div>
+              <div class="wg-closed-sv"></div>
+              <svg width="30" height="14" viewBox="0 0 30 14" fill="none" style="position:relative;z-index:1">
+                <ellipse cx="7.5" cy="7" rx="7.5" ry="5" fill="rgba(34,197,94,0.2)" stroke="rgba(34,197,94,0.45)" stroke-width="1"/>
+                <ellipse cx="22.5" cy="7" rx="7.5" ry="5" fill="rgba(34,197,94,0.2)" stroke="rgba(34,197,94,0.45)" stroke-width="1"/>
+                <circle cx="15" cy="7" r="3.5" fill="rgba(34,197,94,0.55)" stroke-width="0.8"/>
+              </svg>
+              <div class="wg-type">Web App</div>
             </div>
-          </div>
+            <div class="wg-open" style="background:#060E06">
+              <svg width="38" height="38" viewBox="0 0 38 38" fill="none">
+                <rect x="6" y="6" width="26" height="26" rx="3" stroke="#22c55e" stroke-width="1" opacity="0.5"/>
+                <path d="M13 19l5 5 8-10" stroke="#22c55e" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.75"/>
+              </svg>
+            </div>
+            <div class="wg-body">
+              <div class="wg-title">StudyLink</div>
+              <div class="wg-desc">laravelで単語アプリを開発.相互フォローお祝い機能や通知機能がついてます</div>
+              <div class="wg-tags">
+                <span class="wgt">laravel</span>
+              </div>
+            </div>
+          </a>
         </article>
-        <article class="wg">
+        <!-- <article class="wg">
           <div class="wg-closed" style="background:#06060E">
             <div class="wg-closed-sh"></div>
             <div class="wg-closed-sv"></div>
@@ -101,7 +102,7 @@
               <span class="wgt">Flask</span>
             </div>
           </div>
-        </article>
+        </article> -->
         <article class="wg add">
           <div class="wg-closed" style="background:var(--dark2)">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none">

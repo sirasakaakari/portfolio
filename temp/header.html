@@ -39,10 +39,64 @@
             <div class="ribbon-h"></div>
             <div class="ribbon-v"></div>
             <img src="images/ribbon.png" class="ribbon-src">
+            <div class="profile-row">
+                <div class="avatar" id="avatar">白明</div>
+            <div>
             <div class="name-overlay" id="nameOverlay">
-                <h1>白 坂 &nbsp; 明 里</h1>
+                <h1 id="nameEl">白 坂 &nbsp; 明 里</h1>
                 <img src="images/name-tag.png">
             </div>
         </div>
     </nav>
 </header>
+<style>
+.avatar{
+    width: 75px;
+    height: 75px;
+    border-radius:12px;
+    background:#FCEBEB;
+    border:2.5px solid #E24B4A;
+    display:flex;
+    align-items:center;justify-content:center;
+    font-family:'Playfair Display',serif;font-size:20px;font-weight:700;
+    color:#A32D2D;flex-shrink:0;
+    position:relative;
+    overflow:hidden;
+    bottom: 77px;
+    left: 20%;
+}
+.avatar::after{
+    content:'';position:absolute;inset:0;
+    background:repeating-linear-gradient(0deg,transparent,transparent 5px,rgba(226,75,74,.05) 5px,rgba(226,75,74,.05) 6px)
+    }
+</style>
+
+<script>
+    /* 🔐 glitch */
+function keyLock(){
+  if(glitching)return;
+  glitching=true;
+  pressKey('kLock');
+  showToast('🔐 encrypting...',1800);
+  const av=document.getElementById('avatar');
+  const ne=document.getElementById('nameEl');
+  const orig=ne.innerHTML;
+  av.style.transition='all .08s';
+  let t=0;
+  const iv=setInterval(()=>{
+    let s='';
+    for(let i=0;i<6;i++)s+=GLITCH[Math.floor(Math.random()*GLITCH.length)];
+    ne.innerHTML=`<span style="font-family:'DM Mono',monospace;color:#E24B4A;font-size:13px">${s}</span>`;
+    const colors=['#0f0','#f0f','#0ff','#ff0','#E24B4A','#fff'];
+    av.style.background=colors[Math.floor(Math.random()*colors.length)];
+    av.style.color='#fff';
+    t+=80;
+    if(t>1600){
+      clearInterval(iv);
+      ne.innerHTML=orig;
+      av.style.background='';av.style.color='';
+      glitching=false;
+    }
+  },80);
+}
+</script>

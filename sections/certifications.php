@@ -52,7 +52,7 @@
                     <div class="cert-icon" style="opacity:0.4">?</div>
                     <div class="cert-info">
                       <div class="cert-org" style="color:#6B4050">Next Goal</div>
-                      <div class="cert-name">応用情報 / LPIC-1</div>
+                      <div class="cert-name">基本情報午後 / LPIC-1</div>
                       <div class="cert-status">学習中</div>
                     </div>
                   </article>

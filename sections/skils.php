@@ -53,7 +53,7 @@
                         </article>
                         <article class="sk-card">
                             <div class="sk-top">
-                                <span class="sk-name">Linux / Bash</span>
+                                <span class="sk-name">Linux </span>
                                 <span class="sk-lv">LEARNING</span>
                             </div>
                             <div class="sk-bar">

@@ -14,7 +14,7 @@
     section{
       max-width: 1200px;
       margin: 0 auto;
-      padding: 2rem 1.5rem 3rem;
+      padding: 2rem 1.5rem 1rem;
       animation: fadeUp .3s ease;
     }
   </style>
@@ -40,17 +40,17 @@
         <!-- <div class="term-main"> -->
         <div class="term-win-bar red-bar">
           <?php require __DIR__ . '/components/terminal_bar_btn.php'; ?>
-            <div class="term-win-title">shiratama@portfolio:~$ — bash</div>
+            <div class="term-win-title">shirasaka@portfolio:~$ — bash</div>
         </div>
         <div class="home-term-contents"> 
           <!-- TEXT LEFT -->
           <div class="home-term-left"> 
             <div> 
-              <span class="term-prompt">shiratama@portfolio:~$ cat home.txt</span>
+              <span class="term-prompt">shirasaka@portfolio:~$ cat home.txt</span>
               <div class="home-h1">
                 Build systems<br>
-                that <span class="hl">hold.</span><br>
-                <span class="dm">// Secure by intent.</span>
+                that are <span class="hl">reliable.</span><br>
+                <span class="dm">// Secure by design.</span>
               </div>
               <p class="home-sub">
                 セキュリティ・インフラ・クラウドを目指してます<br>
@@ -113,22 +113,29 @@
     <?php require __DIR__ . '/sections/work.php'; ?>
   </main>
   <!-- EASTER EGG -->
-  <div class="easter-overlay" id="easterOverlay">
+   <div class="easter-overlay" id="easterOverlay">
+  <div class="easter-box">
+    <div class="easter-title">🎁 // HIDDEN COMMAND ACTIVATED</div>
+    <div class="easter-msg" id="easterBody"></div>
+    <button class="easter-close" onclick="closeEaster()">[ ESC ] close</button>
+  </div>
+</div>
+  <!-- <div class="easter-overlay" id="easterOverlay">
     <div class="easter-box">
       <div class="easter-title">🎁 // HIDDEN COMMAND ACTIVATED</div>
       <div class="easter-msg">
-        <span style="color:#F87171">Ctrl</span> + <span style="color:#F87171">Alt</span> detected...<br><br>
+        <!-- <span style="color:#F87171">Ctrl</span> + <span style="color:#F87171">Alt</span> detected...<br><br>
         ACCESS GRANTED — secret file unlocked<br><br>
         <span style="color:#fbbf24">cat secret.txt</span><br>
         ──────────────────<br>
         セキュリティを学ぶ者へ:<br>
         好奇心こそが最強の武器。<br>
         ──────────────────<br>
-        <span style="color:#4ade80">// easter egg found 🎉</span>
+        <span style="color:#4ade80">// easter egg found 🎉</span> -->
       </div>
       <button class="easter-close" onclick="closeEaster()">[ ESC ] close</button>
     </div>
-  </div>
+  </div> -->
   <script src="function/giftbox.js"></script>
   <script src="function/profileTerminal.js"></script>
   <script src="function/termanalOpe.js"></script>
@@ -136,3 +143,4 @@
   <script src="function/loading.js"></script>
 </body>
 </html>
+<>
