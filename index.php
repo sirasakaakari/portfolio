@@ -102,7 +102,7 @@
           </div>
         </div>
         <div class="kb-term-body" id="kbTermOut">
-          <span class="tc"># キーボードのキーを押すとここに出力されます</span><br>
+          <span class="tc"># キーボードのキーを押すとここに出力されます.</span><br>
           <span class="tp">shirasaka@portfolio:~$</span> <span class="cur">▋</span>
         </div>
       </div>
