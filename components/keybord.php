@@ -1,6 +1,3 @@
-<!-- ══════════════════════════════════════
-     KEYBOARD (floating)
-══════════════════════════════════════ -->
 <div class="kb-float" id="kbFloat">
   <div class="kb-wrap" style="position:relative">
     <button class="kb-close" onclick="toggleKb()">×</button>
