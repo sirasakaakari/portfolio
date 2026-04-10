@@ -190,7 +190,7 @@ function keyEnter() {
   typeKbLines('contact.sh', [
     { d: 0,    h: '<span class="tp">shirasaka@portfolio:~$</span> <span class="tv">./contact.sh</span>' },
     { d: 500,  h: '<span class="tc">// Redirecting to github...</span>' },
-    { d: 900,  h: '<span class="tg">// <a href="https://github.com/sirasakaakari" target="_blank" class="btn btn-red">github</a></span>' },
+    { d: 900,  h: '<span class="tg"><a href="https://github.com/sirasakaakari" target="_blank" class="btn-entrt">// github</a></span>' },
     { d: 1200, h: '<span class="tp">shirasaka@portfolio:~$</span> <span class="cur">▋</span>' },
   ]);
   setTimeout(function() {

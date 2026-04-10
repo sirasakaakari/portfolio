@@ -24,6 +24,10 @@ header, main {
   opacity: 0;
   transition: opacity 1s;
 }
+.btn-entrt {
+  color: #c06363;
+  font-size: 15px;
+}
 /* ══════════════════════════════════════
    HEADER (sticky)
 ══════════════════════════════════════ */
