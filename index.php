@@ -120,22 +120,6 @@
     <button class="easter-close" onclick="closeEaster()">[ ESC ] close</button>
   </div>
 </div>
-  <!-- <div class="easter-overlay" id="easterOverlay">
-    <div class="easter-box">
-      <div class="easter-title">🎁 // HIDDEN COMMAND ACTIVATED</div>
-      <div class="easter-msg">
-        <!-- <span style="color:#F87171">Ctrl</span> + <span style="color:#F87171">Alt</span> detected...<br><br>
-        ACCESS GRANTED — secret file unlocked<br><br>
-        <span style="color:#fbbf24">cat secret.txt</span><br>
-        ──────────────────<br>
-        セキュリティを学ぶ者へ:<br>
-        好奇心こそが最強の武器。<br>
-        ──────────────────<br>
-        <span style="color:#4ade80">// easter egg found 🎉</span> -->
-      </div>
-      <button class="easter-close" onclick="closeEaster()">[ ESC ] close</button>
-    </div>
-  </div> -->
   <script src="function/giftbox.js"></script>
   <script src="function/profileTerminal.js"></script>
   <script src="function/termanalOpe.js"></script>
@@ -143,4 +127,3 @@
   <script src="function/loading.js"></script>
 </body>
 </html>
-<>
