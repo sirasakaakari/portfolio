@@ -1,0 +1,48 @@
+<header>
+    <div class="white-border">
+        <div class="header-name">Shirasaka Akari</div>
+        <button class="kb-toggle" onclick="toggleKb()">
+            <span class="kb-dot"></span>
+            Keyboard表示
+        </button>
+    </div>
+    <nav class="ribbon-nav">
+        <div class="nav-icons">
+            <a href="#profile" class="nav-icon-item" onclick="setActive(this)">
+                <div class="nav-doc">
+                    <svg viewBox="0 0 36 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="2" y="2" width="26" height="36" rx="2" fill="#FFF0F4" stroke="#E8C8D0" stroke-width="1.5"/>
+                        <path d="M7 12h16M7 17h16M7 22h10" stroke="#E87090" stroke-width="1.2" stroke-linecap="round"/>
+                        <path d="M24 2l8 8h-8V2z" fill="#F4C0CC" stroke="#E8C8D0" stroke-width="1"/>
+                    </svg>
+                </div>
+                <span class="nav-label">Profile</span>
+            </a>
+            <a href="#skills" class="nav-icon-item" onclick="setActive(this)">
+                <div class="nav-folder">
+                    <svg viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 8a2 2 0 012-2h10l3 4h19a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V8z" fill="#F4C0CC" stroke="#E87090" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <span class="nav-label">Skils</span>
+            </a>
+            <a href="#work" class="nav-icon-item" onclick="setActive(this)">
+                <div class="nav-folder">
+                    <svg viewBox="0 0 40 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 8a2 2 0 012-2h10l3 4h19a2 2 0 012 2v16a2 2 0 01-2 2H4a2 2 0 01-2-2V8z" fill="#CC1A6A" stroke="#991040" stroke-width="1.5"/>
+                    </svg>
+                </div>
+                <span class="nav-label">Work</span>
+            </a>
+        </div>
+        <div class="ribbon-band">
+            <div class="ribbon-h"></div>
+            <div class="ribbon-v"></div>
+            <img src="images/ribbon.png" class="ribbon-src">
+            <div class="name-overlay" id="nameOverlay">
+                <h1>白 坂 &nbsp; 明 里</h1>
+                <img src="images/name-tag.png">
+            </div>
+        </div>
+    </nav>
+</header>

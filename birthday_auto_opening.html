@@ -1,0 +1,151 @@
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+
+#stage {
+  width: 100%;
+  height: 100vh; /* 画面の高さに合わせる */
+  background: #000;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+/* #gift-scene{position:relative;width:300px;height:340px;} */
+#gift-scene {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -40%); /* -50%は中央、-40%にして少し下げる */
+  width: 300px;
+  height: 340px;
+}
+#akari-text{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) scale(0);font-family:'Arial',sans-serif;font-size:48px;font-weight:700;letter-spacing:0.25em;color:#fff;text-shadow:0 0 40px rgba(255,150,200,0.8);opacity:0;z-index:50;white-space:nowrap;transition:opacity 0.6s,transform 0.7s cubic-bezier(0.34,1.56,0.64,1);}
+.balloon{position:absolute;opacity:0;z-index:40;}
+#shutter{position:absolute;inset:0;z-index:80;pointer-events:none;}
+.shutter-left,.shutter-right{position:absolute;top:0;width:50%;height:100%;background:#000;transition:transform 1s cubic-bezier(0.77,0,0.18,1);}
+.shutter-left{left:0;}.shutter-right{right:0;}
+.shutter-left.open{transform:translateX(-100%);}.shutter-right.open{transform:translateX(100%);}
+.conf{position:absolute;border-radius:2px;opacity:0;}
+.gift {
+  position: absolute;
+  top: 50%;        /* ← 追加 */
+  left: 0;       /* ← 追加 */
+  width: 100%;
+  height: auto;
+  transition: opacity 0.4s;
+}
+</style>
+
+<div id="stage">
+  <div id="shutter">
+    <div class="shutter-left" id="sL"></div>
+    <div class="shutter-right" id="sR"></div>
+  </div>
+  <div id="gift-scene">
+    <svg id="gift-svg" style="position:absolute;top:0;left:0;width:100%;height:100%;" viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
+      <g id="box-closed">
+        <rect x="55" y="160" width="190" height="140" rx="4" fill="#f8e8f0" stroke="#d4a0c0" stroke-width="2"/>
+        <rect x="135" y="160" width="30" height="140" fill="#d4699a" opacity="0.6"/>
+        <rect x="45" y="140" width="210" height="30" rx="4" fill="#f0d0e0" stroke="#d4a0c0" stroke-width="2"/>
+        <rect x="130" y="140" width="40" height="30" fill="#d4699a" opacity="0.6"/>
+        <ellipse cx="122" cy="128" rx="30" ry="18" fill="#c0507a" transform="rotate(-20 122 128)"/>
+        <ellipse cx="122" cy="128" rx="22" ry="11" fill="#d4699a" transform="rotate(-20 122 128)"/>
+        <ellipse cx="178" cy="128" rx="30" ry="18" fill="#c0507a" transform="rotate(20 178 128)"/>
+        <ellipse cx="178" cy="128" rx="22" ry="11" fill="#d4699a" transform="rotate(20 178 128)"/>
+        <ellipse cx="150" cy="130" rx="14" ry="14" fill="#a03060"/>
+        <ellipse cx="150" cy="130" rx="8" ry="8" fill="#c0507a"/>
+        <path d="M143 140 Q130 165 115 175" stroke="#c0507a" stroke-width="8" fill="none" stroke-linecap="round"/>
+        <path d="M157 140 Q170 165 185 175" stroke="#c0507a" stroke-width="8" fill="none" stroke-linecap="round"/>
+      </g>
+      <g id="box-opening" opacity="0">
+        <rect x="55" y="160" width="190" height="140" rx="4" fill="#f8e8f0" stroke="#d4a0c0" stroke-width="2"/>
+        <rect x="135" y="160" width="30" height="140" fill="#d4699a" opacity="0.6"/>
+        <g transform="rotate(-30 150 160)">
+          <rect x="45" y="100" width="210" height="30" rx="4" fill="#f0d0e0" stroke="#d4a0c0" stroke-width="2"/>
+          <rect x="130" y="100" width="40" height="30" fill="#d4699a" opacity="0.6"/>
+          <ellipse cx="110" cy="80" rx="26" ry="16" fill="#c0507a" transform="rotate(-20 110 80)"/>
+          <ellipse cx="110" cy="80" rx="18" ry="10" fill="#d4699a" transform="rotate(-20 110 80)"/>
+          <ellipse cx="158" cy="70" rx="26" ry="16" fill="#c0507a" transform="rotate(20 158 70)"/>
+          <ellipse cx="158" cy="70" rx="18" ry="10" fill="#d4699a" transform="rotate(20 158 70)"/>
+          <ellipse cx="134" cy="76" rx="12" ry="12" fill="#a03060"/>
+          <ellipse cx="134" cy="76" rx="7" ry="7" fill="#c0507a"/>
+        </g>
+        <text x="100" y="155" font-size="18" fill="#FFD700">✦</text>
+        <text x="158" y="148" font-size="14" fill="#ff9dc8">✦</text>
+        <text x="185" y="160" font-size="10" fill="#FFD700">✦</text>
+      </g>
+      <g id="box-open" opacity="0">
+        <rect x="55" y="200" width="190" height="110" rx="4" fill="#ffe0f0" stroke="#d4a0c0" stroke-width="2"/>
+        <rect x="135" y="200" width="30" height="110" fill="#d4699a" opacity="0.5"/>
+        <path d="M150 200 Q80 150 40 80" stroke="#ff9dc8" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M150 200 Q220 130 260 60" stroke="#d4699a" stroke-width="6" fill="none" stroke-linecap="round"/>
+        <path d="M150 200 Q120 155 95 100" stroke="#ffaad0" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <path d="M150 200 Q178 148 205 108" stroke="#c0507a" stroke-width="4" fill="none" stroke-linecap="round"/>
+        <text x="55" y="130" font-size="16" fill="#FFD700">★</text>
+        <text x="220" y="120" font-size="12" fill="#FFD700">★</text>
+        <text x="88" y="88" font-size="10" fill="#ff9dc8">✦</text>
+        <text x="196" y="83" font-size="14" fill="#ffaad0">✦</text>
+        <text x="40" y="175" font-size="26" fill="#e05080">♥</text>
+        <text x="50" y="212" font-size="18" fill="#ff9dc8">♥</text>
+      </g>
+    </svg>
+
+    <div class="balloon" id="b1" style="left:-40px;top:20px;">
+      <svg width="60" height="90" viewBox="0 0 60 90"><ellipse cx="30" cy="32" rx="28" ry="32" fill="#c084fc" opacity="0.9"/><path d="M30 64 Q28 75 30 85" stroke="#888" stroke-width="1.5" fill="none"/></svg>
+    </div>
+    <div class="balloon" id="b2" style="right:-30px;top:10px;">
+      <svg width="55" height="80" viewBox="0 0 55 80"><ellipse cx="27" cy="28" rx="25" ry="28" fill="#7dd3fc" opacity="0.9"/><path d="M27 56 Q25 68 27 78" stroke="#888" stroke-width="1.5" fill="none"/></svg>
+    </div>
+    <div class="balloon" id="b3" style="left:10px;top:-10px;">
+      <svg width="50" height="75" viewBox="0 0 50 75"><ellipse cx="25" cy="26" rx="23" ry="26" fill="#f9a8d4" opacity="0.9"/><path d="M25 52 Q23 63 25 73" stroke="#888" stroke-width="1.5" fill="none"/></svg>
+    </div>
+    <div class="balloon" id="b4" style="right:5px;top:5px;">
+      <svg width="58" height="85" viewBox="0 0 58 85"><ellipse cx="29" cy="30" rx="27" ry="30" fill="#86efac" opacity="0.9"/><path d="M29 60 Q27 72 29 83" stroke="#888" stroke-width="1.5" fill="none"/></svg>
+    </div>
+  </div>
+
+  <!-- <div id="gift-scene">
+    <div id="gift-svg" style="position:absolute;top:0;left:0;width:100%;height:100%;" viewBox="0 0 300 340" xmlns="http://www.w3.org/2000/svg">
+      <img id="box-closed" src="images/gift-close.png" class="gift">
+      <svg>
+        <g id="box-opening" opacity="0">
+          <rect x="55" y="160" width="190" height="140" rx="4" fill="#f8e8f0" stroke="#d4a0c0" stroke-width="2"/>
+          <rect x="135" y="160" width="30" height="140" fill="#d4699a" opacity="0.6"/>
+          <g transform="rotate(-30 150 160)">
+            <rect x="45" y="100" width="210" height="30" rx="4" fill="#f0d0e0" stroke="#d4a0c0" stroke-width="2"/>
+            <rect x="130" y="100" width="40" height="30" fill="#d4699a" opacity="0.6"/>
+            <ellipse cx="110" cy="80" rx="26" ry="16" fill="#c0507a" transform="rotate(-20 110 80)"/>
+            <ellipse cx="110" cy="80" rx="18" ry="10" fill="#d4699a" transform="rotate(-20 110 80)"/>
+            <ellipse cx="158" cy="70" rx="26" ry="16" fill="#c0507a" transform="rotate(20 158 70)"/>
+            <ellipse cx="158" cy="70" rx="18" ry="10" fill="#d4699a" transform="rotate(20 158 70)"/>
+            <ellipse cx="134" cy="76" rx="12" ry="12" fill="#a03060"/>
+            <ellipse cx="134" cy="76" rx="7" ry="7" fill="#c0507a"/>
+          </g>
+          <text x="100" y="155" font-size="18" fill="#FFD700">✦</text>
+          <text x="158" y="148" font-size="14" fill="#ff9dc8">✦</text>
+          <text x="185" y="160" font-size="10" fill="#FFD700">✦</text>
+        </g>
+      </svg>
+      <img id="box-open" src="images/gift-open.png" class="gift" style="opacity:0;">
+    </div>
+
+    <div class="balloon" id="b1" style="left:-40px;top:20px;">
+      <svg width="60" height="90" viewBox="0 0 60 90"><ellipse cx="30" cy="32" rx="28" ry="32" fill="#c084fc" opacity="0.9"/><path d="M30 64 Q28 75 30 85" stroke="#888" stroke-width="1.5" fill="none"/></svg>
+    </div>
+    <div class="balloon" id="b2" style="right:-30px;top:10px;">
+      <svg width="55" height="80" viewBox="0 0 55 80"><ellipse cx="27" cy="28" rx="25" ry="28" fill="#7dd3fc" opacity="0.9"/><path d="M27 56 Q25 68 27 78" stroke="#888" stroke-width="1.5" fill="none"/></svg>
+    </div>
+    <div class="balloon" id="b3" style="left:10px;top:-10px;">
+      <svg width="50" height="75" viewBox="0 0 50 75"><ellipse cx="25" cy="26" rx="23" ry="26" fill="#f9a8d4" opacity="0.9"/><path d="M25 52 Q23 63 25 73" stroke="#888" stroke-width="1.5" fill="none"/></svg>
+    </div>
+    <div class="balloon" id="b4" style="right:5px;top:5px;">
+      <svg width="58" height="85" viewBox="0 0 58 85"><ellipse cx="29" cy="30" rx="27" ry="30" fill="#86efac" opacity="0.9"/><path d="M29 60 Q27 72 29 83" stroke="#888" stroke-width="1.5" fill="none"/></svg>
+    </div>
+  </div> -->
+
+  <div id="akari-text">A K A R I</div>
+  <div id="confetti-container" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:45;"></div>
+</div>
+

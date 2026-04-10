@@ -1,0 +1,37 @@
+@charset "UTF-8";
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;/* 幅指定をくるあわせないため */
+}
+:root {
+  --bg: #F8F0F2;
+  --white: #FFFFFF;
+  --red: #C0202A;
+  --red2: #E03040;
+  --red-dark: #8B1020;
+  --red-pale: #FDF0F2;
+  --pink: #E87090;
+  --pink-light: #F4C0CC;
+  --pink-pale: #FDF5F7;
+  --dark: #1A0810;
+  --dark2: #2A1020;
+  --dark3: #3A1828;
+  --gray: #6B5055;
+  --border: #E8C8D0;
+  --border-dark: #2E1525;
+  --mono: 'Share Tech Mono', monospace;
+  --sans: 'Noto Sans JP', sans-serif;
+  --serif: 'Cormorant Garamond', serif;
+  --grid: rgba(192,32,42,0.05);
+}
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  background: var(--bg);
+  color: var(--dark);
+  font-family: var(--sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
