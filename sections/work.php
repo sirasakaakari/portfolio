@@ -51,7 +51,7 @@
           </div>
         </article> -->
         <article class="wg">
-          <a href="https://studylink-fklm.onrender.com/" target="_blank" rel="noopener noreferrer">
+          <a href="https://studylink-1.onrender.com" target="_blank" rel="noopener noreferrer">
             <div class="wg-closed" style="background:#060E06">
               <div class="wg-closed-sh"></div>
               <div class="wg-closed-sv"></div>
